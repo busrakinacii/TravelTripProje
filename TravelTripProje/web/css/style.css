@@ -167,8 +167,9 @@ body {
 }
 
     #nav ul {
-        background: url(../images/head_bot.gif);
-        border: 1px solid #291c1b;
+        background-color: #5a82cb;
+        /*background: url(../images/head_bot.gif);*/
+        border: 1px solid #92a8d1;
         border-radius: 0 5px 5px 5px;
         border-width: 0 1px 1px;
         box-shadow: 0 5px 5px rgba(0, 0, 0, 0.5);
