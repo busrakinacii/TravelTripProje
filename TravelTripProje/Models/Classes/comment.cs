@@ -13,10 +13,11 @@ namespace TravelTripProje.Models.Classes
         public string KullaniciAdi { get; set; }
         public string Mail { get; set; }
         public string Yorum { get; set; }
+        public int Blogid { get; set; }
 
         //Blog tablosundan gelen blog Blog Tablosundaki Idyi tutuyor.
         //Bir blogda Yalnız bir Yorum Olabilir.1e Çok İlişki Yoktur.
-        public blog Blog { get; set; }
+        public virtual blog Blog { get; set; }
 
     }
 }
