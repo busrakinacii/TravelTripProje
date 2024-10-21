@@ -130,6 +130,7 @@
     <Compile Include="Models\Classes\addressBlog.cs" />
     <Compile Include="Models\Classes\admin.cs" />
     <Compile Include="Models\Classes\blog.cs" />
+    <Compile Include="Models\Classes\BlogYorum.cs" />
     <Compile Include="Models\Classes\comment.cs" />
     <Compile Include="Models\Classes\communication.cs" />
     <Compile Include="Models\Classes\context.cs" />
