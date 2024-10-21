@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -12,16 +13,20 @@ namespace TravelTripProje.Controllers
     {
         // GET: Blog
         context c = new context();
+        BlogYorum by = new BlogYorum();
         public ActionResult Index()
         {
-            var bloglar = c.Blogs.ToList();
-            return View(bloglar);
+            //var bloglar = c.Blogs.ToList();
+            by.Deger1 = c.Blogs.Take(3).ToList();
+            by.blogSiralama = c.Blogs.OrderByDescending(x => x.ID).Take(3).ToList();
+            return View(by);
         }
-        BlogYorum by = new BlogYorum();
+
         public ActionResult BlogDetay(int id)
         {
             //var blogbul = c.Blogs.Where(x => x.ID == id).ToList();
             by.Deger1 = c.Blogs.Where(x => x.ID == id).ToList();
+            by.Deger2 = c.Comments.Where(x => x.Blogid == id).ToList();
             return View(by);
         }
     }
