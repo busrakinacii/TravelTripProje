@@ -1,8 +1,5 @@
 ﻿@using TravelTripProje.Models.Classes
 @model List<blog>
-@{
-    Layout = null;
-}
 
 <div class="con-bot">
     @foreach (var x in Model)
@@ -13,23 +10,13 @@
             </div>
             <div class="left-text">
                 <h4>@x.Baslik</h4>
-                <span class="doller">@x.Tarih</span>
-                <p>Açıklama Gelecek</p>
+                <span class="doller">@x.Tarih.ToString("dd.MM.yyyy")</span>
+                <p>@x.Aciklama.Substring(0, x.Aciklama.Substring(0, 100).LastIndexOf(" "))</p>
                 <p><a href="/Blog/BlogDetay/@x.ID"><span class="read">Devamını Oku >></span></a></p>
             </div>
         </div>
     }
-
-    @*<div class="right">
-            <div class="bot-left">
-                <img src="~/web/images/pic2.jpg" alt="" />
-            </div>
-            <div class="left-text">
-                <h4>DENEMEDENEMEDENEME</h4>
-                <span class="doller">1021₺</span>
-                <p>SFDLSDFLSDFLLFDLSDFLDFfd</p>
-                <p><a href="#"><span class="read">READ MORE</span></a></p>
-            </div>
-        </div>*@
+    @Html.Action("Partial2", "Default")
     <div class="clear"></div>
 </div>
+
