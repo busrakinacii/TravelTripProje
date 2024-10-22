@@ -1,4 +1,5 @@
-﻿
+﻿@using TravelTripProje.Models.Classes
+@model List<blog>
 @{
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_Default.cshtml";
@@ -24,7 +25,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                                 <img src="/web/images/glass.png" alt="">
                             </div>
                             <div class="grid1-desc">
-                                <p>Restaurants</p>
+                                <p>Restaurantlar</p>
                             </div>
                             <div class="clear"></div>
                         </div>
@@ -33,7 +34,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                                 <img src="/web/images/flight.png" alt="">
                             </div>
                             <div class="grid1-desc">
-                                <p>Flights</p>
+                                <p>Uçuşlar</p>
                             </div>
                             <div class="clear"></div>
                         </div>
@@ -42,7 +43,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                                 <img src="/web/images/group.png" alt="">
                             </div>
                             <div class="grid1-desc">
-                                <p>Things to do</p>
+                                <p>Aktiviteler</p>
                             </div>
                             <div class="clear"></div>
                         </div>
@@ -51,7 +52,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                                 <img src="/web/images/key.png" alt="">
                             </div>
                             <div class="grid1-desc">
-                                <p>Vacation Rents</p>
+                                <p>Araba Kiralama</p>
                             </div>
                             <div class="clear"></div>
                         </div>
@@ -59,12 +60,12 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                     </div>
                     <div class="header_bottom_right_images">
 
-                        <div class="slider">
+                        <div class="slider" style="height:400px; width:650px; margin:auto">
                             <ul class="rslides" id="slider1">
-                                <li><img src="/web/images/img1.jpg" alt=""></li>
-                                <li><img src="/web/images/img2.jpg" alt=""></li>
-                                <li><img src="/web/images/img3.jpg" alt=""></li>
-                                <li><img src="/web/images/img4.jpg" alt=""></li>
+                                @foreach (var x in Model)
+                                {
+                                    <li><img src="@x.BlogImage" alt=""></li>
+                                }
                             </ul>
                         </div>
                     </div>
@@ -78,26 +79,25 @@ License URL: http://creativecommons.org/licenses/by/3.0/
         <div class="wrap">
             <div class="wrapper">
                 <div class="con-top">
-                    <h3>Welcome to our Travel Company!</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facil</p>
-                </div>
+                    <h3>Tatil Seyahat Bloğuma HoşGeldiniz!</h3>
+                    <p>
+                        Gaziantep’in adıyla ilgili anlatılanlar en az tarihi kadar zengin. Bilinen ilk ismi “Torosların karşısındaki Antakya” yani “Antiochia ad Taurum.” Daha sonraları kayıtlara geçen “Ayıntap” için de farklı anlamlar ifade ediliyor. Ayıntap’ın Farsça “Pınarı bol” anlamına geldiğini söyleyen de var, Hititçede “Han toprağı” demek olan “Hantap”tan türediğini dile getiren de. Antep adının kaynağı kesin olarak bilinmese de “Gazi” unvanı 1920’den sonra Kurtuluş Savaşı’ndaki on aylık kuşatma esnasında Fransızlara karşı gösterdikleri direnişten dolayı verilmiş.
 
+                        Gaziantep, Hititlerden Perslere, Romalılardan Araplara kadar çok sayıda uygarlığa ev sahipliği yaptığından, mimari ve tarihi eserler açısından çok zengin bir yerleşim. Şehre vardığınızda Selçuklu ve Osmanlı imparatorluklarının da imzalarını görüyorsunuz. Önerim Gaziantep’i keşfetmeye kaleden başlayıp şehrin tarihi merkezi olan Kültür Yolu’nu adımlamanız.
+                    </p>
+                </div>
+                @Html.Action("Partial1", "Default")
                 <div class="grids">
                     <div class="box1">
                         <div class="padding">
-                            <h4>This Week's Top 10</h4>
-                            <ul class="list list-pad">
-                                <li class="list-bg"><span>1.</span><a href="#">formas humanitatis pe</a></li>
-                                <li class="list-bg1"><span>2.</span><a href="#">congue nihil imperdiet</a></li>
-                                <li class="list-bg"><span>3.</span><a href="#">Aadipisicing elit sed do</a></li>
-                                <li class="list-bg1"><span>4.</span><a href="#">luptatum zzril  </a></li>
-                                <li class="list-bg"><span>5.</span><a href="#">Claritas est etiam</a></li>
-                                <li class="list-bg1"><span>6.</span><a href="#">claritatem insitam;</a></li>
-                                <li class="list-bg"><span>7.</span><a href="#">velit esse molestie consequa</a></li>
-                                <li class="list-bg1"><span>8.</span><a href="#">nostrud exerci tation ulla</a></li>
-                                <li class="list-bg"><span>9.</span><a href="#">demonstraverunt lectores</a></li>
-                                <li class="list-bg1"><span>10.</span><a href="#">dolore te feu</a></li>
-                            </ul>
+                            <h4>Son Bloglarım</h4>
+                            @foreach (var x in Model)
+                            {
+                                <ul class="list list-pad">
+                                    <li class="list-bg"><span>@x.ID.</span><a href="#">@x.Baslik</a></li>
+                                </ul>
+                            }
+
                             <a href="#" class="link1">See all hotels</a>
                         </div>
                         <div class="padding1">
