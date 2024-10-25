@@ -17,8 +17,8 @@ namespace TravelTripProje.Controllers
         public ActionResult Index()
         {
             //var bloglar = c.Blogs.ToList();
-            by.Deger1 = c.Blogs.Take(3).ToList();
-            by.blogSiralama = c.Blogs.OrderByDescending(x => x.ID).Take(3).ToList();
+            by.Deger1 = c.Blogs.Take(5).ToList();
+            by.blogSiralama = c.Blogs.OrderByDescending(x => x.ID).Take(5).ToList();
             return View(by);
         }
 

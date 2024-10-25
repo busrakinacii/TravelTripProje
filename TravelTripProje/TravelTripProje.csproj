@@ -197,13 +197,9 @@
     <Content Include="web\css\slider.css" />
     <Content Include="web\css\style.css" />
     <Content Include="web\destinations.html" />
-    <Content Include="web\images\a.jpg" />
-    <Content Include="web\images\a.png" />
     <Content Include="web\images\about_banner.jpg" />
     <Content Include="web\images\arrows.png" />
-    <Content Include="web\images\b.jpg" />
     <Content Include="web\images\but.png" />
-    <Content Include="web\images\c.jpeg" />
     <Content Include="web\images\contact.png" />
     <Content Include="web\images\dest_banner.jpg" />
     <Content Include="web\images\flight.png" />
