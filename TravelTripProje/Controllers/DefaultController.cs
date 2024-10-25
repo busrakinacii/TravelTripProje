@@ -14,7 +14,7 @@ namespace TravelTripProje.Controllers
         public ActionResult Index()
         {
 
-            var deger = c.Blogs.Take(4).ToList();
+            var deger = c.Blogs.ToList();
             return View(deger);
         }
         public ActionResult About()
@@ -34,13 +34,13 @@ namespace TravelTripProje.Controllers
         }
         public PartialViewResult Partial3()
         {
-            var deger = c.Blogs.Take(3).ToList();
+            var deger = c.Blogs.Take(4).ToList();
             return PartialView(deger);
         }
 
         public PartialViewResult Partial4()
         {
-            var degerler = c.Blogs.OrderByDescending(x => x.ID).Take(3).ToList();
+            var degerler = c.Blogs.OrderByDescending(x => x.ID).Take(4).ToList();
             return PartialView(degerler);
         }
 

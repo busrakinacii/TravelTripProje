@@ -60,7 +60,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                     </div>
                     <div class="header_bottom_right_images">
 
-                        <div class="slider" style="height:400px; width:650px; margin:auto">
+                        <div class="slider" style="height:450px; width:650px; margin:auto">
                             <ul class="rslides" id="slider1">
                                 @foreach (var x in Model)
                                 {
@@ -100,7 +100,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                                     <li class="list-bg"><span>@{i++;} @i.</span><a href="/Blog/BlogDetay/@x.ID">@x.Baslik</a></li>
                                 }
                             </ul>
-                            <a href="#" class="link1">See all hotels</a>
+                            <a href="/Blog/Index" class="link1">Tüm Blokları Gör</a>
                         </div>
                         @Html.Action("Partial3", "Default")
                         <div class="clear"></div>
