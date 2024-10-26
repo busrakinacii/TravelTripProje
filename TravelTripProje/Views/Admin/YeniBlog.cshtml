@@ -6,17 +6,17 @@
 
 <h2 style="margin-bottom:25px; margin-top:25px">Yeni Blog Ekleme</h2>
 <form class="form-group" method="post">
-    @Html.LabelFor(x => x.Baslik)
+    @Html.LabelFor(x => x.Baslik, new { @style = "margin-bottom:10px" })
     @Html.TextBoxFor(x => x.Baslik, new { @class = "form-control" })
     <br />
-    @Html.LabelFor(x => x.Tarih)
+    @Html.LabelFor(x => x.Tarih, new { @style = "margin-bottom:10px" })
     @Html.TextBoxFor(x => x.Tarih, new { @class = "form-control" })
     <br />
-    @Html.LabelFor(x => x.BlogImage)
+    @Html.LabelFor(x => x.BlogImage, new { @style = "margin-bottom:10px" })
     @Html.TextBoxFor(x => x.BlogImage, new { @class = "form-control" })
     <br />
-    @Html.LabelFor(x => x.Aciklama)
-    @Html.TextAreaFor(x => x.Aciklama, new { @class = "form-control" })
+    @Html.LabelFor(x => x.Aciklama, new { @style = "margin-bottom:10px" })
+    @Html.TextAreaFor(x => x.Aciklama, new { @class = "form-control", rows = "7", cols = "70", placeholder = "Açıklama Giriniz..." })
     <br />
     <button class="btn btn-primary">KAYDET</button>
 </form>

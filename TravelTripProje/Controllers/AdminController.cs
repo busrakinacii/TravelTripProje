@@ -25,7 +25,9 @@ namespace TravelTripProje.Controllers
         [HttpPost]
         public ActionResult YeniBlog(blog p)
         {
-            return View();
+            c.Blogs.Add(p);
+            c.SaveChanges();
+            return RedirectToAction("Index");
         }
 
     }
