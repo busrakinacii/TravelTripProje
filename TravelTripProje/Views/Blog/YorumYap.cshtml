@@ -1,0 +1,17 @@
+﻿<div class="content-form">
+    <h3>Bir Yorum Yapın</h3>
+    <form method="post">
+        @*id'yi Gizlemek İçin Kullanılır hidden*@
+        <input type="hidden" placeholder="ID" name="Blogid" value="@ViewBag.deger" required />
+
+        @*Burada Disable Özelliği Bize Hata Fırlatıyor kullanılmıyor.
+            Disabled inputlar form submit ederken gonderilmezler. JavaScript ile disabled özelliği kaldırılıp submit edilebilir daha sonra tekrar disabled yapılır. Tabi hidden field kullanılması gerekiyor böyle durumlarda.
+            <input type="text" placeholder="ID" name="Blogid" value="@ViewBag.deger" required disabled />*@
+
+        <input type="text" placeholder="Kullanıcı Adı" name="KullaniciAdi" required />
+        <input type="text" placeholder="Mail Adresi" name="Mail" required />
+        <textarea placeholder="Yorum" name="Yorum"></textarea>
+        <input type="submit" value="Gönder" />
+    </form>
+</div>
+

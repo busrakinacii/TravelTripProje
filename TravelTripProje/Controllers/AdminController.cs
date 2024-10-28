@@ -52,7 +52,6 @@ namespace TravelTripProje.Controllers
             blg.BlogImage = b.BlogImage;
             c.SaveChanges();
             return RedirectToAction("Index");
-
         }
     }
 }
