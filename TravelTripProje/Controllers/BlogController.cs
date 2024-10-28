@@ -14,6 +14,7 @@ namespace TravelTripProje.Controllers
         // GET: Blog
         context c = new context();
         BlogYorum by = new BlogYorum();
+        [Authorize]
         public ActionResult Index()
         {
             //var bloglar = c.Blogs.ToList();

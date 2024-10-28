@@ -13,7 +13,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <html>
 
 <head>
-    <title> Master login Form Responsive Widget Template  :: w3layouts</title>
+    <title> Login Giriş Paneli  :: w3layouts</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta name="keywords" content=" Master  Login Form Widget Tab Form,Login Forms,Sign up Forms,Registration Forms,News letter Forms,Elements" />
@@ -31,11 +31,15 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 
         <div class="design-w3l">
             <div class="mail-form-agile">
-                <form action="#" method="post">
-                    <input type="text" name="name" placeholder="Kullanıcı Adınız..." required="" />
-                    <input type="password" name="password" class="padding" placeholder="Şifreniz..." required="" />
+
+                @using (Html.BeginForm("Login", "GirisYap", FormMethod.Post))
+                {
+                    <input type="text" name="Kullanici" placeholder="Kullanıcı Adınız..." required="" />
+                    <input type="password" name="Sifre" class="padding" placeholder="Şifreniz..." required="" />
                     <input type="submit" value="Giriş Yap">
-                </form>
+                }
+
+
             </div>
             <div class="clear"> </div>
         </div>

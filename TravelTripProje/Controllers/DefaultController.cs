@@ -11,6 +11,7 @@ namespace TravelTripProje.Controllers
     {
         // GET: Default
         context c = new context();
+        [Authorize]
         public ActionResult Index()
         {
 
