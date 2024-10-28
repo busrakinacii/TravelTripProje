@@ -1,0 +1,26 @@
+﻿@model TravelTripProje.Models.Classes.comment
+@{
+    ViewBag.Title = "YorumGetir";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2 style="margin-bottom:25px; margin-top:25px">Yorum Güncelleme Sayfası</h2>
+<br />
+@using (Html.BeginForm("YorumGuncelle", "Admin", FormMethod.Post))
+{
+    @Html.LabelFor(x => x.ID, new { @style = "margin-bottom:10px" })
+    @Html.TextBoxFor(x => x.ID, new { @class = "form-control", @readonly = "readonly" })
+    <br />
+    @Html.LabelFor(x => x.KullaniciAdi, new { @style = "margin-bottom:10px" })
+    @Html.TextBoxFor(x => x.KullaniciAdi, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.Mail, new { @style = "margin-bottom:10px" })
+    @Html.TextBoxFor(x => x.Mail, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.Yorum, new { @style = "margin-bottom:10px" })
+    @Html.TextAreaFor(x => x.Yorum, 15, 1, new { @class = "form-control", placeholder = "Yorumunuzu Giriniz..." })
+    <br />
+    <button class="btn btn-warning">Yorum Güncelle</button>
+
+}
+
