@@ -1,0 +1,49 @@
+﻿@using TravelTripProje.Models.Classes
+@model List<addressBlog>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Default.cshtml";
+}
+
+
+<!DOCTYPE HTML>
+<html>
+<body>
+    <div class="contact">
+        <div class="wrap">
+            <div class="contact-top">
+                <h2>İletişim sayfası</h2>
+
+                <p>Bir iletişim mesajının etkili olabilmesi için, kısa ve öz olması esastır. Uzun ve karmaşık mesajlar, alıcının dikkatini dağıtır ve mesajın özünün anlaşılmasını zorlaştırabilir. İyi bir mesaj, en önemli bilgileri basit ve anlaşılır bir şekilde ifade eder.</p>
+            </div>
+            @Html.Action("Mesaj", "Iletisim")
+            <div class="clear"></div>
+            <div class="contact-bottom">
+                <div class="contact-left">
+                    @foreach (var x in Model)
+                    {
+                        <div class="contact-add">
+                            <h3>ADRESİMİZ</h3><br />
+                            <p>@x.Aciklama</p><br />
+
+                            <p><b>Adres: </b>@x.Adres</p>
+                            <p><b>Konum: </b>@x.Konum</p>
+                            <p><b>Telefon: </b>@x.Telefon</p>
+
+                            <p><b>Email: </b><a href="@x.Mail">@x.Mail</a></p>
+                        </div>
+                    }
+                </div>
+                <div class="contact-map">
+                    <iframe width="580" height="250" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="http://maps.google.co.in/maps?f=q&amp;source=s_q&amp;hl=en&amp;geocode=&amp;q=Rashelle+Way,+San+Ramon,+CA,+United+States&amp;aq=0&amp;oq=rash&amp;sll=44.308127,-111.75293&amp;sspn=22.280521,53.569336&amp;ie=UTF8&amp;hq=&amp;hnear=Rashelle+Way,+San+Ramon,+Contra+Costa,+California+94582,+United+States&amp;ll=37.768294,-121.922369&amp;spn=0.001503,0.00327&amp;t=m&amp;z=14&amp;iwloc=A&amp;output=embed"></iframe><br><small><a href="http://maps.google.co.in/maps?f=q&amp;source=embed&amp;hl=en&amp;geocode=&amp;q=Rashelle+Way,+San+Ramon,+CA,+United+States&amp;aq=0&amp;oq=rash&amp;sll=44.308127,-111.75293&amp;sspn=22.280521,53.569336&amp;ie=UTF8&amp;hq=&amp;hnear=Rashelle+Way,+San+Ramon,+Contra+Costa,+California+94582,+United+States&amp;ll=37.768294,-121.922369&amp;spn=0.001503,0.00327&amp;t=m&amp;z=14&amp;iwloc=A" style="color: #555;text-align:left">Map'de Yerimizi Görün...</a></small>
+                </div>
+
+                <div class="clear"></div>
+            </div>
+            <div class="clear"></div>
+            <br />
+        </div>
+    </div>
+</body>
+</html>
+
