@@ -1,0 +1,20 @@
+﻿@using TravelTripProje.Models.Classes
+@model List<blog>
+
+<h4>Son Bloglarım</h4>
+<div class="box-left">
+    @foreach (var x in Model)
+    {
+        <div class="bot-img">
+            <img src="@x.BlogImage" alt="" />
+        </div>
+        <div class="bot-desc">
+            <p>@x.Aciklama.Substring(0, x.Aciklama.Substring(0, 100).LastIndexOf(" ")) </p>
+        </div>
+        <div class="clear"></div>
+
+    }
+
+</div>
+
+
