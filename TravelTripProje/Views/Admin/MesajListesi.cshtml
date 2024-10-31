@@ -1,0 +1,31 @@
+﻿@using TravelTripProje.Models.Classes
+@model List<communication>
+@{
+    ViewBag.Title = "MesajListesi";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2 style="margin-bottom:25px; margin-top:25px">Mesaj Listesi</h2>
+<table class="table table-bordered">
+    <tr>
+        <th>ID</th>
+        <th>Kullanıcı</th>
+        <th>Mail</th>
+        <th>Konu</th>
+        <th>Sil</th>
+        <th>Detaylar</th>
+    </tr>
+    @foreach (var x in Model)
+    {
+        <tr>
+            <td>@x.ID</td>
+            <td>@x.AdSoyad</td>
+            <td>@x.Mail</td>
+            <td>@x.Konu</td>
+            <td><a href="/Admin/MesajSil/@x.ID" class="btn btn-danger">Sil</a></td>
+            <td><a href="/Admin/MesajGetir/@x.ID" class="btn btn-info">Detaylar</a></td>
+        </tr>
+    }
+
+</table>
+

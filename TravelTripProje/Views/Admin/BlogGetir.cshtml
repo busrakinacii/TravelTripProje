@@ -6,7 +6,7 @@
 
 <h2 style="margin-bottom:25px; margin-top:25px">Blog Güncelleme Sayfası</h2>
 <br />
-@using (Html.BeginForm("BlogGuncelle", "Admin", FormMethod.Post))
+@using (Html.BeginForm("MesajGetir", "Admin", FormMethod.Post))
 {
     @Html.LabelFor(x => x.ID, new { @style = "margin-bottom:10px" })
     @Html.TextBoxFor(x => x.ID, new { @class = "form-control", @readonly = "readonly" })

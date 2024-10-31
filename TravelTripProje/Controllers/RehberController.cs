@@ -16,6 +16,11 @@ namespace TravelTripProje.Controllers
             var sirala = c.Blogs.Take(10).ToList();
             return View(sirala);
         }
+        public PartialViewResult Populer()
+        {
+            var pop = c.Blogs.Take(4).ToList();
+            return PartialView(pop);
+        }
         public PartialViewResult Gorsel()
         {
             var g = c.Blogs.OrderByDescending(x => x.ID).Take(4).ToList();

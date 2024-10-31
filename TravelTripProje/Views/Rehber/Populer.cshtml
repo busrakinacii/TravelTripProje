@@ -1,0 +1,14 @@
+﻿@using TravelTripProje.Models.Classes
+@model List<blog>
+
+
+<div class="desti-right">
+    <h4>ilk Bloglarım</h4>
+    @foreach (var x in Model)
+    {
+        <div class="bot-img">
+            <img src="@x.BlogImage" alt="@x.Baslik" />
+        </div>
+        <div class="clear"></div>
+    }
+</div>

@@ -80,6 +80,24 @@ namespace TravelTripProje.Controllers
             c.SaveChanges();
             return RedirectToAction("YorumListesi");
         }
+        public ActionResult MesajListesi()
+        {
+            var mesajlar = c.Communications.ToList();
+            return View(mesajlar);
+        }
+        public ActionResult MesajSil(int id)
+        {
+            var y = c.Communications.Find(id);
+            c.Communications.Remove(y);
+            c.SaveChanges();
+            return RedirectToAction("MesajListesi");
+        }
+        public ActionResult MesajGetir(int id)
+        {
+            var yr = c.Communications.Find(id);
+            return View("MesajGetir", yr);
+        }
+
 
     }
 }
