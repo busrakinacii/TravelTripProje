@@ -97,6 +97,26 @@ namespace TravelTripProje.Controllers
             var yr = c.Communications.Find(id);
             return View("MesajGetir", yr);
         }
+        public ActionResult HakkimdaGetir(int id=1)
+        {
+            var yr = c.Abouts.Find(id);
+            return View();
+        }
+        public ActionResult HakkimdaGuncelle(about y)
+        {
+            var hak = c.Abouts.Find(y.ID);
+            hak.Aciklama = y.Aciklama;
+            hak.FotoUrl = y.FotoUrl;
+            c.SaveChanges();
+            return View();
+        }
+
+        //public ActionResult HakkimdaGetir(int id = 1)
+        //{
+        //    var hak = c.Comments.Find(id);
+        //    return View("HakkimdaGetir", hak);
+        //}
+
 
 
     }

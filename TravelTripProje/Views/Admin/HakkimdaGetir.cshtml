@@ -1,0 +1,22 @@
+﻿@model TravelTripProje.Models.Classes.about
+@*@model List<about>*@
+
+@{
+    ViewBag.Title = "HakkimdaGetir";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2 style="margin-bottom:25px; margin-top:25px">Hakkımda Sayfası</h2>
+@using (Html.BeginForm("HakkimdaGuncelle", "Admin", FormMethod.Post))
+{
+    @Html.LabelFor(x => x.ID, new { @style = "margin-bottom:10px" })
+    @Html.TextBoxFor(x => x.ID, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.FotoUrl, new { @style = "margin-bottom:10px" })
+    @Html.TextBoxFor(x => x.FotoUrl, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.Aciklama, new { @style = "margin-bottom:10px" })
+    @Html.TextAreaFor(x => x.Aciklama, new { @class = "form-control", rows = "7", cols = "70", placeholder = "Açıklama Giriniz..." })
+    <br />
+    <button class="btn btn-primary">KAYDET</button>
+}
