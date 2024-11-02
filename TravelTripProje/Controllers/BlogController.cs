@@ -28,6 +28,7 @@ namespace TravelTripProje.Controllers
             //var blogbul = c.Blogs.Where(x => x.ID == id).ToList();
             by.Deger1 = c.Blogs.Where(x => x.ID == id).ToList();
             by.Deger2 = c.Comments.Where(x => x.Blogid == id).ToList();
+            by.SonblogSiralama = c.Blogs.Take(5).ToList();
             return View(by);
         }
         [HttpGet]

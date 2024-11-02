@@ -8,9 +8,9 @@ namespace TravelTripProje.Models.Classes
 {
     public class BlogYorum
     {
-        public IEnumerable<blog>Deger1 { get; set; }
-        public IEnumerable<comment>Deger2 { get; set; }
+        public IEnumerable<blog> Deger1 { get; set; }
+        public IEnumerable<comment> Deger2 { get; set; }
         public IEnumerable<blog> blogSiralama { get; set; }
-
+        public IEnumerable<blog> SonblogSiralama { get; set; }
     }
 }

@@ -97,10 +97,10 @@ namespace TravelTripProje.Controllers
             var yr = c.Communications.Find(id);
             return View("MesajGetir", yr);
         }
-        public ActionResult HakkimdaGetir(int id=1)
+        public ActionResult HakkimdaGetir(int id = 1)
         {
             var yr = c.Abouts.Find(id);
-            return View();
+            return View("HakkimdaGetir", yr);
         }
         public ActionResult HakkimdaGuncelle(about y)
         {
@@ -108,7 +108,7 @@ namespace TravelTripProje.Controllers
             hak.Aciklama = y.Aciklama;
             hak.FotoUrl = y.FotoUrl;
             c.SaveChanges();
-            return View();
+            return RedirectToAction("HakkimdaGetir");
         }
 
         //public ActionResult HakkimdaGetir(int id = 1)
